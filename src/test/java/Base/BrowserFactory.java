@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class BrowserFactory {
     private static ThreadLocal<WebDriver> driver=new ThreadLocal<>();
-    public WebDriver getBrowser(String browserName)
+    public static WebDriver getBrowser(String browserName)
     {
         if(driver.get()==null)
         {
@@ -34,13 +34,13 @@ public class BrowserFactory {
                     driver.set(new EdgeDriver());
                     return driver.get();
                 default:
-                    throw new RuntimeException("No such browser available");
+                    throw new RuntimeException("No such browser available "+browserName);
             }
 
         }
         return driver.get();
     }
-    public void closeBrowser()
+    public static void closeBrowser()
     {
         if(driver.get()!=null)
         {
