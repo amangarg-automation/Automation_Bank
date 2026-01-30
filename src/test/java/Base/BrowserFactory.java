@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,13 +23,16 @@ public class BrowserFactory {
                     options.addArguments("--incognito");
                     options.addArguments("--start-maximized");
                     options.addArguments("--disable-notifications");
+                    options.addArguments("--headless");
                     Map<String,Integer> prefs=new HashMap<>();
                     prefs.put("profile.default_content_setting_values.geolocation",2);
                     options.setExperimentalOption("prefs",prefs);
                     driver.set(new ChromeDriver(options));
                     return driver.get();
                 case "firefox":
-                    driver.set(new FirefoxDriver());
+                    FirefoxOptions firefoxOptions=new FirefoxOptions();
+                    firefoxOptions.addArguments("--headless");
+                    driver.set(new FirefoxDriver(firefoxOptions));
                     return driver.get();
                 case "edge":
                     driver.set(new EdgeDriver());
