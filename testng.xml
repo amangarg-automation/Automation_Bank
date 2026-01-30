@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="HDFC_Bank_Regression_Suite" parallel="tests" thread-count="2">
+    <test name="HDFC Bank Regression testing chrome">
+        <parameters>
+            <parameter  name="environment" value="Production"/>
+            <parameter name="browser" value="chrome"/>
+        </parameters>
+        <classes>
+            <class name="TestCases.TC01">
+            </class>
+            <class name="TestCases.TC02">
+        </class>
+        </classes>
+    </test>
+    <test name="HDFC Bank Regression testing firefox">
+        <parameters>
+            <parameter  name="environment" value="Production"/>
+            <parameter name="browser" value="firefox"/>
+        </parameters>
+        <classes>
+            <class name="TestCases.TC01">
+            </class>
+            <class name="TestCases.TC02">
+            </class>
+        </classes>
+    </test>
+</suite>

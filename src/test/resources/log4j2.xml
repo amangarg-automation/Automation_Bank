@@ -1,0 +1,16 @@
+<configuration status="warn">
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout  pattern="%d{HH:mm:ss dd/MM/yyyy} %-5p %c:%L %m%n"/>
+        </Console>
+        <File name="file" fileName="automation.log">
+            <PatternLayout pattern ="%d{HH:mm:ss dd/MM/yyyy} %-5p %c:%L %m%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+    <Root level="info">
+        <AppenderRef ref="console"/>
+        <AppenderRef ref="file"/>
+    </Root>
+    </Loggers>
+</configuration>

@@ -86,6 +86,16 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <profiles>
+        <profile>
+            <id>
+                dev
+            </id>
+            <properties>
+                    <browser>chrome</browser>
+            </properties>
+        </profile>
+    </profiles>
     <build>
         <plugins>
             <!-- REQUIRED FOR REPORTS -->
