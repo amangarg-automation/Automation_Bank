@@ -23,7 +23,7 @@ public class BrowserFactory {
                     options.addArguments("--incognito");
                     options.addArguments("--start-maximized");
                     options.addArguments("--disable-notifications");
-                    options.addArguments("--headless");
+                    //options.addArguments("--headless");
                     Map<String,Integer> prefs=new HashMap<>();
                     prefs.put("profile.default_content_setting_values.geolocation",2);
                     options.setExperimentalOption("prefs",prefs);
@@ -31,8 +31,9 @@ public class BrowserFactory {
                     return driver.get();
                 case "firefox":
                     FirefoxOptions firefoxOptions=new FirefoxOptions();
-                    firefoxOptions.addArguments("--headless");
+                    //firefoxOptions.addArguments("--headless");
                     driver.set(new FirefoxDriver(firefoxOptions));
+                    driver.get().manage().window().maximize();
                     return driver.get();
                 case "edge":
                     driver.set(new EdgeDriver());
@@ -40,7 +41,6 @@ public class BrowserFactory {
                 default:
                     throw new RuntimeException("No such browser available "+browserName);
             }
-
         }
         return driver.get();
     }

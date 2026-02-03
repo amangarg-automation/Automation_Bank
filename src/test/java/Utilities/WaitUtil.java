@@ -10,12 +10,12 @@ import java.time.Duration;
 public class WaitUtil {
     public static WebElement waitForElement(WebDriver driver, By locator)
     {
-        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(20));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
     public static WebElement waitForElementToBeClickable(WebDriver driver,By locator)
     {
-        WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
+        WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(20));
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
     public static void waitForPageReload(WebDriver driver)

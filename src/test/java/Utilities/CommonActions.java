@@ -20,70 +20,70 @@ public class CommonActions {
     public CommonActions() throws AWTException {
     }
 
-    public void clickElement(WebElement element)
+    public static void clickElement(WebElement element)
     {
         element.click();
     }
-    public void addInput(WebElement element, String input)
+    public static void addInput(WebElement element, String input)
     {
         element.sendKeys(input);
     }
-    public void acceptAlert(WebDriver driver)
+    public static void acceptAlert(WebDriver driver)
     {
         driver.switchTo().alert().accept();
     }
-    public void dismissAlert(WebDriver driver)
+    public static void dismissAlert(WebDriver driver)
     {
         driver.switchTo().alert().dismiss();
     }
-    public void sendInputToAlert(WebDriver driver,String input)
+    public static void sendInputToAlert(WebDriver driver,String input)
     {
         driver.switchTo().alert().sendKeys(input);
     }
-    public String getAlertText(WebDriver driver)
+    public static String getAlertText(WebDriver driver)
     {
        return driver.switchTo().alert().getText();
     }
-    public String getTextFromElement(WebElement element)
+    public static String getTextFromElement(WebElement element)
     {
         return element.getText();
     }
-    public void mouseHover(WebDriver driver,WebElement element)
+    public static void mouseHover(WebDriver driver,WebElement element)
     {
         Actions actions=new Actions(driver);
         actions.moveToElement(element);
     }
-    public void doubleClick(WebDriver driver,WebElement element)
+    public static void doubleClick(WebDriver driver,WebElement element)
     {
         Actions actions=new Actions(driver);
         actions.doubleClick(element).perform();
     }
-    public void scrollToElement(WebDriver driver,WebElement element)
+    public static void scrollToElement(WebDriver driver,WebElement element)
     {
         JavascriptExecutor js=(JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);",element);
     }
-    public void scrollToTop(WebDriver driver)
+    public static void scrollToTop(WebDriver driver)
     {
         JavascriptExecutor js=(JavascriptExecutor) driver;
         js.executeScript("window.scrollTo(0,0)");
     }
-    public void scrollToBottom(WebDriver driver)
+    public static void scrollToBottom(WebDriver driver)
     {
         JavascriptExecutor js=(JavascriptExecutor) driver;
         js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
     }
-    public void scrollByLeftOrRight(WebDriver driver,int value)
+    public static void scrollByLeftOrRight(WebDriver driver,int value)
     {
         JavascriptExecutor js=(JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(arguments[0],0);",value);
     }
-    public void scrollByUpOrDown(WebDriver driver,int value)
+    public static void scrollByUpOrDown(WebDriver driver,int value)
     {
         JavascriptExecutor js=(JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,arguments[0]);",value);
     }
-    public void selectDynamicDropdown(WebDriver driver, By locator,String value)
+    public static void selectDynamicDropdown(WebDriver driver, By locator,String value)
     {
         WebElement element=WaitUtil.waitForElement(driver,locator);
         List<WebElement> dynamicElements=driver.findElements(locator);
@@ -96,12 +96,12 @@ public class CommonActions {
             }
         }
     }
-    public void dragAndDropdown(WebDriver driver, WebElement source, WebElement target)
+    public static void dragAndDropdown(WebDriver driver, WebElement source, WebElement target)
     {
         Actions actions=new Actions(driver);
         actions.clickAndHold(source).moveToElement(target).build().perform();
     }
-    public  void handleInfiniteScroll(WebDriver driver,By locator) throws InterruptedException {
+    public static void handleInfiniteScroll(WebDriver driver,By locator) throws InterruptedException {
         JavascriptExecutor js=(JavascriptExecutor) driver;
         long currentPageHeight=(long)js.executeScript("return document.body.scrollHeight");
         while(true)
@@ -116,60 +116,60 @@ public class CommonActions {
             currentPageHeight=newHeight;
         }
     }
-    public void selectValuefromDropdown(WebElement element,String value)
+    public static void selectValuefromDropdown(WebElement element,String value)
     {
         Select select=new Select(element);
         select.selectByValue(value);
     }
-    public void selectTextfromDropdown(WebElement element,String text)
+    public static void selectTextfromDropdown(WebElement element,String text)
     {
         Select select=new Select(element);
         select.selectByVisibleText(text);
     }
-    public void selectByIndex(WebElement element,int index)
+    public static void selectByIndex(WebElement element,int index)
     {
         Select select=new Select(element);
         select.selectByIndex(index);
     }
-    public void checkRadioButton(WebElement element)
+    public static void checkRadioButton(WebElement element)
     {
         if(!element.isSelected())
         {
             element.click();
         }
     }
-    public void uncheckRadioButton(WebElement element)
+    public static void uncheckRadioButton(WebElement element)
     {
         if(element.isSelected())
         {
             element.click();
         }
     }
-    public void switchToFrame(WebDriver driver,String name)
+    public static void switchToFrame(WebDriver driver,String name)
     {
         driver.switchTo().frame(name);
     }
-    public void switchToFrame(WebDriver driver, int id)
+    public static void switchToFrame(WebDriver driver, int id)
     {
         driver.switchTo().frame(id);
     }
-    public void switchToFrame(WebDriver driver,WebElement element)
+    public static void switchToFrame(WebDriver driver,WebElement element)
     {
         driver.switchTo().frame(element);
     }
-    public void switchToParentFrame(WebDriver driver)
+    public static void switchToParentFrame(WebDriver driver)
     {
         driver.switchTo().parentFrame();
     }
-    public void switchToDefaultFrame(WebDriver driver)
+    public static void switchToDefaultFrame(WebDriver driver)
     {
         driver.switchTo().defaultContent();
     }
-    public void switchToWindowHandle(WebDriver driver,String windowHandle)
+    public static void switchToWindowHandle(WebDriver driver,String windowHandle)
     {
         driver.switchTo().window(windowHandle);
     }
-    public void switchToDefaultHandle(WebDriver driver,String defaultHandle)
+    public static void switchToDefaultHandle(WebDriver driver,String defaultHandle)
     {
         Set<String> windowHandles=driver.getWindowHandles();
         for(String windowHandle:windowHandles)
@@ -181,16 +181,25 @@ public class CommonActions {
         }
         driver.switchTo().window(defaultHandle);
     }
-    public Robot robot=new Robot();
-    public void keyPress()
+    public static Robot robot;
+
+    static {
+        try {
+            robot = new Robot();
+        } catch (AWTException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void keyPress()
     {
         robot.keyPress(KeyEvent.VK_ENTER);
     }
-    public void releasePress()
+    public static void releasePress()
     {
         robot.keyRelease(KeyEvent.VK_ENTER);
     }
-    public void mouseRightClick()
+    public static void mouseRightClick()
     {
         robot.mousePress(MouseEvent.BUTTON1_DOWN_MASK);
         robot.mouseRelease(MouseEvent.BUTTON1_DOWN_MASK);

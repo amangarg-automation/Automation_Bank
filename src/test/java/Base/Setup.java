@@ -16,7 +16,7 @@ import java.lang.reflect.Method;
 import java.util.Properties;
 
 public class Setup {
-    protected WebDriver driver;
+    protected static WebDriver driver;
     private static Properties prop;
     protected ExtentReports report;
     protected PDFGenerator pdfGenerator;
@@ -53,9 +53,10 @@ public class Setup {
         }
         String reportPath=reportFolder+"/"+method.getName()+"_"+System.currentTimeMillis()+".pdf";
         pdfGenerator.save(reportPath);
-        if(driver!=null) {
+      if(driver!=null) {
             BrowserFactory.closeBrowser();
         }
+
     }
     @AfterTest
     public void flushReport()
