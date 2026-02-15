@@ -6,14 +6,16 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
 public class BrowserFactory {
     private static ThreadLocal<WebDriver> driver=new ThreadLocal<>();
-    public static WebDriver getBrowser(String browserName)
-    {
+    public static WebDriver getBrowser(String browserName) throws MalformedURLException {
         if(driver.get()==null)
         {
             switch (browserName)
@@ -27,7 +29,7 @@ public class BrowserFactory {
                     Map<String,Integer> prefs=new HashMap<>();
                     prefs.put("profile.default_content_setting_values.geolocation",2);
                     options.setExperimentalOption("prefs",prefs);
-                    driver.set(new ChromeDriver(options));
+                    driver.set(new RemoteWebDriver(new URL("http://selenium:4444/wd/hub"),options));
                     return driver.get();
                 case "firefox":
                     FirefoxOptions firefoxOptions=new FirefoxOptions();

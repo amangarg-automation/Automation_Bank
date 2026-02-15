@@ -13,6 +13,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.net.MalformedURLException;
 import java.util.Properties;
 
 public class Setup {
@@ -32,8 +33,7 @@ public class Setup {
     }
     @BeforeMethod
     @Parameters("browser")
-    public void launchBrowser(ITestContext context, String browser,Method method)
-    {
+    public void launchBrowser(ITestContext context, String browser,Method method) throws MalformedURLException {
         logger.info("-----------------------Started TC "+method.getName()+"---------------------------");
         String browserName=prop.getProperty("browser");
         String url= prop.getProperty("url");
