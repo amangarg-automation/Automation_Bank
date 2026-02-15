@@ -9,7 +9,7 @@ public class ExtentManager {
     private static ExtentSparkReporter reporter;
     public static ExtentReports getInstance(ITestContext context)
     {
-        String reportPath= System.getProperty("user.dir")+"/ExtentReports/"+System.currentTimeMillis();
+        String reportPath= "/app/ExtentReports/"+System.currentTimeMillis();
         reporter=new ExtentSparkReporter(reportPath);
         reports=new ExtentReports();
         reports.attachReporter(reporter);

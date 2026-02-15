@@ -17,7 +17,7 @@ public class StepLogger {
         this.pdfGenerator=pdfGenerator;
     }
     public void addSteptoPDF(String description, String expected, String actual, String status) throws IOException {
-        String screenshotpath=System.getProperty("user.dir")+"/screenshots/"+System.currentTimeMillis()+".png";
+        String screenshotpath="/app/screenshots/"+System.currentTimeMillis()+".png";
         File screenshot=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(screenshot,new File(screenshotpath));
         pdfGenerator.captureStep(description,expected,actual,status,screenshotpath);

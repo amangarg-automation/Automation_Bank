@@ -45,13 +45,13 @@ public class Setup {
     @AfterMethod
     public void closeBrowser(Method method) throws IOException {
         logger.info("-----------------------completed TC "+method.getName()+"---------------------------");
-        String reportFolder=System.getProperty("user.dir")+"/PDF Reports/"+method.getName();
-        File dir=new File(reportFolder);
+        String reportDir="/app/PDF_Reports";
+        File dir=new File(reportDir);
         if(!dir.exists())
         {
             dir.mkdirs();
         }
-        String reportPath=reportFolder+"/"+method.getName()+"_"+System.currentTimeMillis()+".pdf";
+        String reportPath=reportDir+"/"+method.getName()+"_"+System.currentTimeMillis()+".pdf";
         pdfGenerator.save(reportPath);
       if(driver!=null) {
             BrowserFactory.closeBrowser();

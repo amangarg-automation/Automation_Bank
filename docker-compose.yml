@@ -5,6 +5,7 @@ services :
     container_name: selenium
     ports:
       - "4444:4444"
+      - "5900:5900"
     shm_size: 2gb
 
   automation:
@@ -15,6 +16,6 @@ services :
         - selenium
     volumes:
       - ./reports:/app/ExtentReports
-      - ./pdf_reports:/app/PDF\ Reports
-      - ./screenshots:/app/screenshotsd
+      - ./pdf_reports:/app/PDF_Reports
+      - ./screenshots:/app/screenshots
 
