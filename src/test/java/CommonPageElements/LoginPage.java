@@ -5,6 +5,7 @@ import Utilities.CommonActions;
 import Utilities.WaitUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class LoginPage extends Setup {
     private static final By amazon_HomePage_LoginButton=By.id("nav-link-accountList-nav-line-1");;
@@ -62,6 +63,7 @@ public class LoginPage extends Setup {
     {
         WaitUtil.waitForElement(driver,amazon_LoginPage_Password_TextBox);
         CommonActions.addInput(driver.findElement(amazon_LoginPage_Password_TextBox),password);
+        //WebElement element= driver.findElement(amazon_LoginPage_Continue_Button()).;
     }
     public static boolean verifyPasswordPage()
     {

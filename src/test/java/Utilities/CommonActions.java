@@ -2,10 +2,7 @@ package Utilities;
 
 import com.beust.ah.A;
 import io.cucumber.java.en_old.Ac;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -95,6 +92,12 @@ public class CommonActions {
                 return;
             }
         }
+    }
+    public static WebElement getShadowDomElement(WebDriver driver,By locator,By shadowLocator)
+    {
+        WebElement shadowHost= driver.findElement(locator);
+        SearchContext shadowRoot=shadowHost.getShadowRoot();
+        return shadowRoot.findElement(shadowLocator);
     }
     public static void dragAndDropdown(WebDriver driver, WebElement source, WebElement target)
     {

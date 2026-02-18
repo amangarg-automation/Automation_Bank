@@ -4,7 +4,9 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.ITestContext;
 import org.testng.annotations.*;
 
@@ -17,6 +19,7 @@ import java.net.MalformedURLException;
 import java.util.Properties;
 
 public class Setup {
+
     protected static WebDriver driver;
     private static Properties prop;
     protected ExtentReports report;
