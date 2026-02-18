@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="HDFC_Bank_Regression_Suite" parallel="tests" thread-count="2">
     <test name="HDFC Bank Regression testing chrome">
+        <listeners>
+            <listener class-name="Listeners.TestListener"/>
+        </listeners>
         <parameters>
             <parameter  name="environment" value="Production"/>
             <parameter name="browser" value="chrome"/>
@@ -13,6 +16,9 @@
         </classes>
     </test>
     <test name="HDFC Bank Regression testing firefox">
+        <listeners>
+            <listener class-name="Listeners.TestListener"/>
+        </listeners>
         <parameters>
             <parameter  name="environment" value="Production"/>
             <parameter name="browser" value="firefox"/>

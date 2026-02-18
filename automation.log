@@ -8,3 +8,43 @@
 13:51:58 03/02/2026 INFO  TestCases.TC02:37 -----------------------Started TC TC02---------------------------
 13:52:01 03/02/2026 INFO  TestCases.TC02:47 -----------------------completed TC TC02---------------------------
 13:52:04 03/02/2026 INFO  TestCases.TC02:47 -----------------------completed TC TC02---------------------------
+18:06:16 18/02/2026 INFO  TestCases.TC01:27 --------------Started new Test Case----------------
+18:06:16 18/02/2026 INFO  TestCases.TC01:27 --------------Started new Test Case----------------
+18:06:16 18/02/2026 INFO  TestCases.TC01:37 -----------------------Started TC TC01---------------------------
+18:06:16 18/02/2026 INFO  TestCases.TC01:37 -----------------------Started TC TC01---------------------------
+18:06:28 18/02/2026 INFO  TestCases.TC01:47 -----------------------completed TC TC01---------------------------
+18:06:28 18/02/2026 ERROR Utilities.CommonSteps:39 Step Failed due to following error :Unable to locate element: #nav\-link\-accountList\-nav\-line\-1
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [d26a4678-0389-486b-9f4e-c798687bffb4, findElement {value=nav-link-accountList-nav-line-1, using=id}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 16500, moz:profile: C:\Users\amank\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: d26a4678-0389-486b-9f4e-c798687bffb4
+18:06:28 18/02/2026 INFO  TestCases.TC01:47 -----------------------completed TC TC01---------------------------
+18:06:28 18/02/2026 INFO  TestCases.TC02:37 -----------------------Started TC TC02---------------------------
+18:06:30 18/02/2026 INFO  TestCases.TC02:37 -----------------------Started TC TC02---------------------------
+18:06:34 18/02/2026 INFO  TestCases.TC02:47 -----------------------completed TC TC02---------------------------
+18:06:36 18/02/2026 INFO  TestCases.TC02:47 -----------------------completed TC TC02---------------------------
+18:08:51 18/02/2026 INFO  TestCases.TC01:27 --------------Started new Test Case----------------
+18:08:51 18/02/2026 INFO  TestCases.TC01:27 --------------Started new Test Case----------------
+18:08:51 18/02/2026 INFO  TestCases.TC01:37 -----------------------Started TC TC01---------------------------
+18:08:51 18/02/2026 INFO  TestCases.TC01:37 -----------------------Started TC TC01---------------------------
+18:14:18 18/02/2026 INFO  TestCases.TC01:27 --------------Started new Test Case----------------
+18:14:18 18/02/2026 INFO  TestCases.TC01:27 --------------Started new Test Case----------------
+18:14:19 18/02/2026 INFO  TestCases.TC01:37 -----------------------Started TC TC01---------------------------
+18:14:19 18/02/2026 INFO  TestCases.TC01:37 -----------------------Started TC TC01---------------------------
+18:14:30 18/02/2026 ERROR Utilities.CommonSteps:39 Step Failed due to following error :Unable to locate element: #nav\-link\-accountList\-nav\-line\-1
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [df44d2cf-0c81-407d-bfb3-b93ab6093502, findElement {value=nav-link-accountList-nav-line-1, using=id}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 21236, moz:profile: C:\Users\amank\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: df44d2cf-0c81-407d-bfb3-b93ab6093502
+18:14:30 18/02/2026 INFO  TestCases.TC01:47 -----------------------completed TC TC01---------------------------
+18:14:30 18/02/2026 INFO  TestCases.TC01:47 -----------------------completed TC TC01---------------------------
+18:14:31 18/02/2026 INFO  TestCases.TC02:37 -----------------------Started TC TC02---------------------------
+18:14:32 18/02/2026 INFO  TestCases.TC02:37 -----------------------Started TC TC02---------------------------
+18:14:37 18/02/2026 INFO  TestCases.TC02:47 -----------------------completed TC TC02---------------------------
+18:14:41 18/02/2026 INFO  TestCases.TC02:47 -----------------------completed TC TC02---------------------------
