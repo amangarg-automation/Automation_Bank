@@ -8,7 +8,7 @@
     steps
     {
     echo 'Getting code from the git repo'
-    git url:'https://github.com/amangarg-automation/Automation_Bank.git', branch:'feature/login'
+    git url:'https://github.com/amangarg-automation/Automation_Bank.git', branch:'docker'
     }
     }
     stage('Build and test')
@@ -16,7 +16,7 @@
     steps
     {
     echo 'building the test classes and running tests'
-    bat 'mvn clean test'
+    bat 'docker-compose up --build'
     }
     }
     stage('Archive junit reports')
@@ -34,5 +34,9 @@
     {
     archiveArtifacts artifacts: '**/*.pdf', allowEmptyArchive:true
     }
+    cleanup {
+                echo 'Cleaning up Docker containers'
+                bat 'docker-compose down'
+            }
     }
     }
