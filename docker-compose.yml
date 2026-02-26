@@ -1,20 +1,20 @@
-version: "3"
-services :
-  selenium:
-    image: selenium/standalone-chrome-debug
-    container_name: selenium
-    ports:
-      - "4444:4444"
-    shm_size: 2gb
+  version: "3"
+  services :
+    selenium:
+      image: selenium/standalone-chrome-debug
+      container_name: selenium
+      ports:
+        - "4444:4444"
+      shm_size: 2gb
 
-  automation:
-    build:
-      context: .
-    container_name: java-tests
-    depends_on:
-        - selenium
-    volumes:
-      - ./reports:/app/ExtentReports
-      - ./pdf_reports:/app/PDF_Reports
-      - ./screenshots:/app/screenshots
+    automation:
+      build:
+        context: .
+      container_name: java-tests
+      depends_on:
+          - selenium
+      volumes:
+        - ./reports:/app/ExtentReports
+        - ./pdf_reports:/app/PDF_Reports
+        - ./screenshots:/app/screenshots
 
